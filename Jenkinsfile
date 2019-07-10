@@ -17,11 +17,13 @@ pipeline {
         stage('Parallel') {
             parallel {
                 stage('Stage2-parallel') {
+                    when { branch 'master' }
                     steps {
                         echo 'Stage2'
                     }
                 }
                 stage('Stage3 - parallel') {
+                    when { not { branch 'master' } }
                     steps {
                         echo 'Stage3'
                     }

@@ -9,6 +9,11 @@ pipeline {
                 checkout scm
             }
         }
+         stage('uptime') {
+            steps {
+                uptime
+            }
+        }
         stage('stage 1') {
             steps {
                 echo 'Stage1'

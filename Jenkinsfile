@@ -11,7 +11,7 @@ pipeline {
         }
          stage('uptime') {
             steps {
-                uptime
+                sh 'ssh ec2-user@34.251.208.9 uptime'
             }
         }
         stage('stage 1') {
